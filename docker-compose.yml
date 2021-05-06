@@ -1,0 +1,19 @@
+services:
+
+  openssh-server:
+    image: ghcr.io/linuxserver/openssh-server
+    container_name: openssh-server
+    hostname: openssh-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+      - PUBLIC_KEY_FILE=/Users/marcosgomes/.ssh/id_rsa.pub # replace for your private key path.
+      - USER_NAME=admin
+    volumes:
+      - /Users/marcosgomes/dev/server/openssh/appdata/config:/config # replace for your local path to put your server.
+
+    ports:
+      - 2222:2222
+    restart: unless-stopped
+#    restart: always

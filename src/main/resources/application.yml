@@ -1,0 +1,13 @@
+
+
+#Sftp configuration
+sftp:
+  userName:
+  host:
+  port: 22
+  privateKey:
+  directory:
+  pool:
+    maxTotal: 10
+    maxIdle: 10
+    minIdle: 0
